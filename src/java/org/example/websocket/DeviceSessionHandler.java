@@ -20,6 +20,10 @@ public class DeviceSessionHandler {
     private final Set<Session> sessions = new HashSet<>();
     private final Set<Device> devices = new HashSet<>();
     
+    public List<Device> getDevices() {
+        return new ArrayList<>(devices);
+    }
+    
     public void addSession(Session session) {
         sessions.add(session);
         for (Device device : devices) {
@@ -30,9 +34,6 @@ public class DeviceSessionHandler {
 
     public void removeSession(Session session) {
         sessions.remove(session);
-    }
-    public List<Device> getDevices() {
-        return new ArrayList<>(devices);
     }
 
     public void addDevice(Device device) {
